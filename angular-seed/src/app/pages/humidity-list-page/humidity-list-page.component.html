@@ -1,0 +1,15 @@
+<h2>humedad</h2>
+<table class="table table-bordered">
+ <thead>
+   <tr>
+     <th>ID</th>
+     <th>Valor</th>
+     <th>Completed</th>
+   </tr>
+ </thead>
+ <tr *ngFor="let humidity of humiditys">
+  <td>{{humidity.id}}</td>
+  <td>{{humidity.valor}}</td>
+  <td>{{humidity.fecha}}</td>
+ </tr>
+</table>
