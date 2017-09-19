@@ -49,13 +49,17 @@ void setup() {
   pinMode(13, OUTPUT);
 }
 
-
+int numSaltos = 0;
 String msg = "";
+bool repe = false;
 
 void loop() {
 
   if (SerialESP8266.available()) {
     char c = SerialESP8266.read();
+    if (c == '\n') {
+      numSaltos += 1;
+    }
     if (c == '+') {
       msg = msg + c;
       bool ban = true;
@@ -67,25 +71,24 @@ void loop() {
         }
       }
 
-      if (msg.substring(0, 2) == "+I") { // filtro para que solo se vea pin y on
+      if (msg.substring(0, 2) == "+I") {
         String temp = msg.substring(msg.indexOf('p') + 1 , msg.indexOf('H') - 1);
 
-        // split del areglo de caracteres por el = que se envia en el codigo html
         String xval = getValue(temp, '=', 0);
         String yval = getValue(temp, '=', 1);
 
-        // mjestra en consola los valores recibidos
         Serial.println("pin:" + xval);
         Serial.println("on:" + yval);
 
-        // transforma a enteros para envia la operación a los pines del arduino
         int pin = getValue(temp, '=', 0).toInt();
         int on = getValue(temp, '=', 1).toInt();
 
-        // salida al arduino.
         pinMode(pin, OUTPUT);
         digitalWrite(pin, on);
+      } else if (msg.substring(0, 12) == "+CIFSR:STAIP,") {
+        Serial.println("IP: " + msg);
       }
+
       msg = "";
     }
   }
@@ -96,9 +99,6 @@ void loop() {
   }
 }
 
-/**
- * Función equivalen a split en java
- */
 String getValue(String data, char separator, int index) {
   int found = 0;
   int strIndex[] = { 0, -1 };
@@ -114,35 +114,29 @@ String getValue(String data, char separator, int index) {
   return found > index ? data.substring(strIndex[0], strIndex[1]) : "";
 }
 
-/**
- * Muestra la direccion IP en consola
- */
 void printString(String s) {
-  int cont = 0; // contador de saltos 
-  int cont2 = 0; // contador del sub string
-  String mgs2 = ""; // buffer
-  SerialESP8266.println(s); // envio del comando al serial del wifi
+  int cont = 0;
+  int cont2 = 0;
+  String mgs2 = "";
+  SerialESP8266.println(s);
   if (SerialESP8266.available()) {
     bool ban = true;
-    int contletras = 0; // contador de letras para el substring
+    int contletras = 0;
     while (ban) {
       char c = SerialESP8266.read();
-      mgs2 = mgs2 + c; // adicionar al buffer
+      mgs2 = mgs2 + c;
       contletras += 1;
       if (c == '\n') {
         cont += 1;
       }
-      // establece en que parte del string tiene que dividir
       if (c == ','){
         cont2 = contletras;
       }
-      // condicional de salida del ciclo
       if (cont == 3) {
         ban = false;
       }
     }
-    // muestra la direccion ip en consola
     Serial.print("IP: ");
-    Serial.println(mgs2.substring(cont2));
+    Serial.println(mgs2.substring(contletras));
   }
 }
