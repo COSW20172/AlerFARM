@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -34,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n  <a class=\"navbar-brand\" href=\"#\">Alert-Farm</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/user\">Create User</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/temperatures\">Temperatura</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/temperature\">Crear Temperatura</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/humiditys\">humedad</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/humidity\">Crear humedad</a>\n      </li>\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\n      </li>\n      <form class=\"form-inline my-2 my-lg-0\">\n      </form>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">Alert-Farm</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/user\">Create User</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/temperatures\">Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/temperature\">Crear Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/humiditys\">humedad</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/humidity\">Crear humedad</a>\r\n      </li>\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n      <form class=\"form-inline my-2 my-lg-0\">\r\n      </form>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -603,7 +607,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home-page/home-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  Welcome to Alert-Farm\n</p>"
+module.exports = "<p>\r\n  Welcome to Alert-Farm\r\n</p>"
 
 /***/ }),
 
@@ -664,7 +668,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/humidity-edit-page/humidity-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Agregar un dato de humedad</h2>\r\n  <form [formGroup]=\"humidityForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"id\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"id\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Agregar un dato de humedad</h2>\r\n  <form [formGroup]=\"humidityForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"id\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"id\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -749,7 +753,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/humidity-list-page/humidity-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>humedad</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>ID</th>\n     <th>Valor</th>\n     <th>Completed</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let humidity of humiditys\">\n  <td>{{humidity.id}}</td>\n  <td>{{humidity.valor}}</td>\n  <td>{{humidity.fecha}}</td>\n </tr>\n</table>"
+module.exports = "<h2>humedad</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let humidity of humiditys\">\r\n  <td>{{humidity.id}}</td>\r\n  <td>{{humidity.valor}}</td>\r\n  <td>{{humidity.fecha}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -819,7 +823,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/page-not-found/page-not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  La pagina que esta buscando no fue encontrada =(\n</p>\n<p>\n  <a routerLink=\"/\">Back to Home</a>\n</p>"
+module.exports = "<p>\r\n  La pagina que esta buscando no fue encontrada =(\r\n</p>\r\n<p>\r\n  <a routerLink=\"/\">Back to Home</a>\r\n</p>"
 
 /***/ }),
 
@@ -880,7 +884,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-in/sing-in-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Sign In</h2>\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"description\">Usuario</label>\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"priority\">Contraseña</label>\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Iniciar sesión</button>\n\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\n\n  </form>\n</div>\n"
+module.exports = "<div class=\"container\">\r\n  <h2>Sign In</h2>\r\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Contraseña</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Iniciar sesión</button>\r\n\r\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\r\n\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -963,7 +967,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-edit-page/task-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Editar Alerta</h2>\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"description\">Id</label>\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"priority\">Valor</label>\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"completed\">Completed</label>\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\n\n  </form>\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Editar Alerta</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1048,7 +1052,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-list-page/task-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Tasks</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>ID</th>\n     <th>Valor</th>\n     <th>Completed</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let todo of todos\">\n   <td>{{todo.description}}</td>\n   <td>{{todo.priority}}</td>\n   <td>{{todo.completed}}</td>\n </tr>\n</table>"
+module.exports = "<h2>Tasks</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let todo of todos\">\r\n   <td>{{todo.description}}</td>\r\n   <td>{{todo.priority}}</td>\r\n   <td>{{todo.completed}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1118,7 +1122,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/temperature-edit-page/temperature-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Editar temperatura</h2>\r\n  <form [formGroup]=\"temperaturaForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"id\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"id\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Editar temperatura</h2>\r\n  <form [formGroup]=\"temperaturaForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"id\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"id\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1203,7 +1207,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/temperature-list-page/temperature-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Temperatura</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>id</th>\n     <th>Valor</th>\n     <th>Fecha</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let temperature of temperatures\">\n   <td>{{temperature.id}}</td>\n   <td>{{temperature.valor}}</td>\n   <td>{{temperature.fecha}}</td>\n </tr>\n</table>"
+module.exports = "<h2>Temperatura</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>id</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let temperature of temperatures\">\r\n   <td>{{temperature.id}}</td>\r\n   <td>{{temperature.valor}}</td>\r\n   <td>{{temperature.fecha}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1273,7 +1277,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-edit-page/user-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Añadir nuevo usuario</h2>\n  <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"name\">Usuario</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"lastname\">Nombre</label>\n      <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"image\">Url Image</label>\n      <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email</label>\n      <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"password\">Password</label>\n      <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-success\">Añadir</button>\n\n  </form>\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Añadir nuevo usuario</h2>\r\n  <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"name\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"lastname\">Nombre</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"image\">Url Image</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"email\">Email</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"password\">Password</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Añadir</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1360,7 +1364,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-list-page/user-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>lista de usuarios</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Name</th>\n     <th>Lastname</th>\n     <th>Image</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let user of usuarios\">\n   <td>{{user.name}}</td>\n   <td>{{user.lastname}}</td>\n   <td><img [src]=\"user.image\" width=\"150\" height=\"150\" /></td>\n </tr>\n</table>"
+module.exports = "<h2>lista de usuarios</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Name</th>\r\n     <th>Lastname</th>\r\n     <th>Image</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let user of usuarios\">\r\n   <td>{{user.name}}</td>\r\n   <td>{{user.lastname}}</td>\r\n   <td><img [src]=\"user.image\" width=\"150\" height=\"150\" /></td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 

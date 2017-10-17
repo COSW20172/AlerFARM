@@ -1,10 +1,10 @@
 export class Humidity {
     private id: string;
     private valor: Number;
-    private fecha: string;
+    private fecha: Number;
     private description: string;
 
-    constructor(id:string,valor: Number, fecha: string) {
+    constructor(id:string,valor: Number, fecha: Number) {
         this.id = id;
         this.valor = valor;
         this.fecha = fecha;

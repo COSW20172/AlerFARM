@@ -8,7 +8,7 @@ export class TemperatureService extends APIService{
   private resourceUrl = 'api/temperature';
 
   
-      create(value:string,value2:Number,value3:string):Observable<Temperature>{
+      create(value:string,value2:Number,value3:Number):Observable<Temperature>{
         return this.post(this.resourceUrl,new Temperature(value,value2,value3));
 
       }

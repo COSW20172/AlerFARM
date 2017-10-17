@@ -8,7 +8,7 @@ export class HumidityService extends APIService{
   private resourceUrl = 'api/humidity';
 
   
-      create(value:string,value2:Number,value3:string):Observable<Humidity>{
+      create(value:string,value2:Number,value3:Number):Observable<Humidity>{
         return this.post(this.resourceUrl,new Humidity(value,value2,value3));
 
       }
