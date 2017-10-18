@@ -29,6 +29,7 @@ public class UserServiceImpl
     private void populateSampleData()
     {
         users.add( new User( "test@mail.com", "password","Andres", "Perez", "https://fanart.tv/api/download.php?type=download&image=50980&section=1") );
+        users.add( new User( "test2@mail.com", "password2","jose", "Perez", "https://fanart.tv/api/download.php?type=download&image=50980&section=1") );
     }
 
 
@@ -58,14 +59,21 @@ public class UserServiceImpl
     @Override
     public User findUserByEmailAndPassword( String email, String password )
     {
-        return users.get( 0 );
+        User temp=users.get( 0 );
+        for(int i=0;i<users.size();i+=1)
+        {
+            if ((email.equals(users.get(i).getEmail())) && (password.equals(users.get(i).getPassword()))){
+                temp=users.get(i);
+            }
+        }
+        System.out.println(users);
+        return temp;
     }
 
     @Override
     public User registerUser(User user) {
         users.add(user);
-        return users.get(users.size()-1);
-
+        return (user);
 
     }
 

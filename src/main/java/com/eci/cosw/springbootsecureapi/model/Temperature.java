@@ -5,7 +5,7 @@ import java.util.Date;
 public class Temperature {
     private String id ;
     private Float valor;
-    private String fecha;
+    private Float fecha;
     private String description;
 
     public String getDescription() {
@@ -32,11 +32,11 @@ public class Temperature {
         this.valor = valor;
     }
 
-    public String getFecha() {
+    public Float getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Float fecha) {
         this.fecha = fecha;
     }
     
@@ -45,7 +45,7 @@ public class Temperature {
 
     }
 
-    public Temperature(String id, Float valor, String fecha,String description){
+    public Temperature(String id, Float valor, Float fecha,String description){
         this.setID(id);
         this.setValor(valor);
         this.setFecha(fecha);

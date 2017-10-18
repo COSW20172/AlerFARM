@@ -514,8 +514,8 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = (function () {
-    function User(username, password, name, lastname, image) {
-        this.username = username;
+    function User(email, password, name, lastname, image) {
+        this.email = email;
         this.password = password;
         this.name = name;
         this.lastname = lastname;
@@ -1277,7 +1277,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-edit-page/user-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Añadir nuevo usuario</h2>\r\n  <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"name\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"lastname\">Nombre</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"image\">Url Image</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"email\">Email</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"password\">Password</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Añadir</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Añadir nuevo usuario</h2>\r\n  <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"name\">nombre</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"lastname\">apellido</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"image\">Url Image</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"email\">Email</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"password\">Password</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Añadir</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 

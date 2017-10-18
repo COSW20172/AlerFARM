@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lab3cosw.iml" filepath="$PROJECT_DIR$/lab3cosw.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab3cosw_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lab3cosw_main.iml" group="lab3cosw" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab3cosw_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lab3cosw_test.iml" group="lab3cosw" />
+      <module fileurl="file://$PROJECT_DIR$/AlerFARM.iml" filepath="$PROJECT_DIR$/AlerFARM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlerFARM_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AlerFARM_main.iml" group="AlerFARM" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlerFARM_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AlerFARM_test.iml" group="AlerFARM" />
     </modules>
   </component>
 </project>

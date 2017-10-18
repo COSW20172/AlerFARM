@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="lab3cosw_main" target="1.8" />
-      <module name="lab3cosw_test" target="1.8" />
+      <module name="AlerFARM_main" target="1.8" />
+      <module name="AlerFARM_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -5,7 +5,7 @@ import java.util.Date;
 public class Humidity {
     private String id ;
     private Float valor;
-    private String fecha;
+    private Float fecha;
     private String description;
 
     public String getDescription() {
@@ -32,11 +32,11 @@ public class Humidity {
         this.valor = valor;
     }
 
-    public String getFecha() {
+    public Float getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Float fecha) {
         this.fecha = fecha;
     }
     
@@ -45,7 +45,7 @@ public class Humidity {
 
     }
 
-    public Humidity(String id, Float valor, String fecha,String description){
+    public Humidity(String id, Float valor, Float fecha,String description){
         this.setID(id);
         this.setValor(valor);
         this.setFecha(fecha);
