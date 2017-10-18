@@ -28,8 +28,8 @@ public class UserServiceImpl
     @PostConstruct
     private void populateSampleData()
     {
-        users.add( new User( "test@mail.com", "password","Andres", "Perez", "https://fanart.tv/api/download.php?type=download&image=50980&section=1") );
-        users.add( new User( "test2@mail.com", "password2","jose", "Perez", "https://fanart.tv/api/download.php?type=download&image=50980&section=1") );
+        users.add( new User( "test@mail.com","password","juan diaz",01,"+573015669878"));
+        users.add( new User( "test@mail2.com","password2","juan dos diaz",02,"+573025669878") );
     }
 
 

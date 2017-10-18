@@ -24,8 +24,8 @@ export class UserEditPageComponent implements OnInit {
       email: '',
       password: '',
       name: '',
-      lastname: '',
-      image: ''
+      idUser: '',
+      celular: ''
     });
 
   }
@@ -35,8 +35,8 @@ export class UserEditPageComponent implements OnInit {
       this.userForm.get('email').value,
       this.userForm.get('password').value,
       this.userForm.get('name').value,
-      this.userForm.get('lastname').value,
-      this.userForm.get('image').value
+      this.userForm.get('idUser').value,
+      this.userForm.get('celular').value
     ).subscribe(serverResponse=>{
         this.router.navigate(['/users']);
     }, error=>{

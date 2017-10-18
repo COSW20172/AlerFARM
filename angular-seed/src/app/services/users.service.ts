@@ -18,16 +18,16 @@ export class UsersService extends APIService {
     super(config, authService, http);
   }
 
-  login(username: string, password: string) {
-    return this.post('user/login', { username, password }, { credentials: false }).map(loginResponse => {
+  login(email: string, password: string) {
+    return this.post('user/login', { email, password }, { credentials: false }).map(loginResponse => {
       if (loginResponse) {
         this.authService.accessToken = loginResponse.accessToken;
       }
     });
   }
 
-  create(username: string, password: string,name:string,lastname:string,image:string):Observable<User>{
-    return this.post(this.resourceUrl,new User(username,password,name,lastname,image));
+  create(email:string,password:string,name: string, idUser: Number, celular: string):Observable<User>{
+    return this.post(this.resourceUrl,new User(email,password,name, idUser, celular));
 
   }
   

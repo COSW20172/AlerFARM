@@ -7,7 +7,7 @@ package com.eci.cosw.springbootsecureapi.model;
 public class User
 {
 
-    private long id;
+    private int idUser;
 
     private String email;
 
@@ -15,99 +15,67 @@ public class User
 
     private String name;
 
-    private String lastname;
-
-    private String username;
-
-    private String image;
-
+    private String celular;
 
     public User()
     {
     }
 
-    public User( String email, String password, String name, String lastname, String image )
+    public User( String email, String password, String name,int idUser,String celular )
     {
+        this.idUser = idUser;
         this.email = email;
         this.password = password;
         this.name = name;
-        this.lastname = lastname;
-        this.setImage(image);
+        this.celular = celular;
     }
 
-
-    public long getId()
-    {
-        return id;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId( long id )
-    {
-        this.id = id;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail( String email )
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword( String password )
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setFirstname( String firstname )
-    {
-        this.name = firstname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastname()
-    {
-        return lastname;
+    public String getCelular() {
+        return celular;
     }
 
-    public void setLastname( String lastname )
-    {
-        this.lastname = lastname;
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername( String username )
-    {
-        this.username = username;
-    }
 
     @Override
     public String toString()
     {
-        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", name='"
-            + name + ", image='" + image + '\'' + '}';
+        return "User{" + "id=" + idUser + ", email='" + email + '\'' + ", password='" + password + '\'' + ", name='"
+            + name + ", celular='" + celular + '\'' + '}';
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 }

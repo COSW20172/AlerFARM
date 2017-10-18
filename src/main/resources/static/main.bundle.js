@@ -1,19 +1,15 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ "../../../../../src lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
 
 /***/ }),
 
@@ -514,12 +510,12 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = (function () {
-    function User(email, password, name, lastname, image) {
+    function User(email, password, name, idUser, celular) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.lastname = lastname;
-        this.image = image;
+        this.idUser = idUser;
+        this.celular = celular;
     }
     return User;
 }());
@@ -1277,7 +1273,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-edit-page/user-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Añadir nuevo usuario</h2>\r\n  <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"name\">nombre</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"lastname\">apellido</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"image\">Url Image</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"email\">Email</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"password\">Password</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Añadir</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Añadir nuevo usuario</h2>\r\n  <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"email\">Email</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"password\">Password</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"name\">nombre</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"idUser\">Cedula</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"idUser\" formControlName=\"idUser\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"celular\">Celular</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"celular\" formControlName=\"celular\">\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Añadir</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1314,13 +1310,13 @@ var UserEditPageComponent = (function () {
             email: '',
             password: '',
             name: '',
-            lastname: '',
-            image: ''
+            idUser: '',
+            celular: ''
         });
     };
     UserEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.UsersService.create(this.userForm.get('email').value, this.userForm.get('password').value, this.userForm.get('name').value, this.userForm.get('lastname').value, this.userForm.get('image').value).subscribe(function (serverResponse) {
+        this.UsersService.create(this.userForm.get('email').value, this.userForm.get('password').value, this.userForm.get('name').value, this.userForm.get('idUser').value, this.userForm.get('celular').value).subscribe(function (serverResponse) {
             _this.router.navigate(['/users']);
         }, function (error) {
             console.log(error);
@@ -1364,7 +1360,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-list-page/user-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>lista de usuarios</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Name</th>\r\n     <th>Lastname</th>\r\n     <th>Image</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let user of usuarios\">\r\n   <td>{{user.name}}</td>\r\n   <td>{{user.lastname}}</td>\r\n   <td><img [src]=\"user.image\" width=\"150\" height=\"150\" /></td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>lista de usuarios</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Nombre</th>\r\n     <th>Celular</th>\r\n     <th>Correo</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let user of usuarios\">\r\n   <td>{{user.name}}</td>\r\n   <td>{{user.celular}}</td>\r\n   <td>{{user.email}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1612,16 +1608,16 @@ var UsersService = (function (_super) {
         _this.resourceUrl = 'user/items';
         return _this;
     }
-    UsersService.prototype.login = function (username, password) {
+    UsersService.prototype.login = function (email, password) {
         var _this = this;
-        return this.post('user/login', { username: username, password: password }, { credentials: false }).map(function (loginResponse) {
+        return this.post('user/login', { email: email, password: password }, { credentials: false }).map(function (loginResponse) {
             if (loginResponse) {
                 _this.authService.accessToken = loginResponse.accessToken;
             }
         });
     };
-    UsersService.prototype.create = function (username, password, name, lastname, image) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_6__models_User__["a" /* User */](username, password, name, lastname, image));
+    UsersService.prototype.create = function (email, password, name, idUser, celular) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_6__models_User__["a" /* User */](email, password, name, idUser, celular));
     };
     UsersService.prototype.list = function () {
         return this.get(this.resourceUrl);

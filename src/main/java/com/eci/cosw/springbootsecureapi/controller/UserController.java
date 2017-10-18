@@ -33,12 +33,12 @@ public class UserController
 
         String jwtToken = "";
 
-        if ( login.getUsername() == null || login.getPassword() == null )
+        if ( login.getEmail() == null || login.getPassword() == null )
         {
             throw new ServletException( "Please fill in username and password" );
         }
 
-        String username = login.getUsername();
+        String username = login.getEmail();
         String password = login.getPassword();
 
         User user = userService.findUserByEmailAndPassword( username,password );
