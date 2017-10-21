@@ -35,11 +35,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `alertfarm`.`Temperatura`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `alertfarm`.`Temperatura` (
+CREATE TABLE IF NOT EXISTS `alertfarm`.`Temperaturas` (
   `idParametro` INT NOT NULL AUTO_INCREMENT,
   `valor` FLOAT NULL,
   `fecha` FLOAT NOT NULL,
   `Clientes_idClientes` INT NOT NULL,
+  `Arduino_idArduino` INT NOT NULL,
   PRIMARY KEY (`idParametro`),
   INDEX `fk_Parametro_Clientes_idx` (`Clientes_idClientes` ASC),
   CONSTRAINT `fk_Parametro_Clientes`
@@ -53,11 +54,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `alertfarm`.`Humedad`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `alertfarm`.`Humedad` (
+CREATE TABLE IF NOT EXISTS `alertfarm`.`Humedades` (
   `idParametro` INT NOT NULL AUTO_INCREMENT,
   `valor` FLOAT NULL,
   `fecha` FLOAT NOT NULL,
   `Clientes_idClientes` INT NOT NULL,
+  `Arduino_idArduino` INT NOT NULL,
   PRIMARY KEY (`idParametro`),
   INDEX `fk_Parametro_Clientes_idx` (`Clientes_idClientes` ASC),
   CONSTRAINT `fk_Parametro_Clientes0`
