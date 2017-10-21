@@ -1,13 +1,13 @@
 export class Temperature {
-    private id: string;
+    private idParametro: Number;
     private valor: Number;
     private fecha: Number;
-    private description: string;
+    private Clientes_idClientes: Number;
 
-    constructor(id: string,valor: Number, fecha: Number) {
-        this.id = id;
+    constructor(idParametro: Number,Clientes_idClientes: Number,valor: Number, fecha: Number) {
+        this.idParametro = idParametro;
         this.valor = valor;
         this.fecha = fecha;
-        this.description="Temperature";
+        this.Clientes_idClientes=Clientes_idClientes;
     }
 }

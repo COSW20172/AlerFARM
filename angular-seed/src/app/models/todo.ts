@@ -1,10 +1,10 @@
 export class Todo {
-    private description: string;
+    private clientes_idClientes: string;
     private priority: Number;
     private completed: boolean;
 
-    constructor(description: string, priority: Number = 1, completed: boolean = false) {
-        this.description = description;
+    constructor(clientes_idClientes: string, priority: Number = 1, completed: boolean = false) {
+        this.clientes_idClientes = clientes_idClientes;
         this.completed = completed;
         this.priority = priority;
     }

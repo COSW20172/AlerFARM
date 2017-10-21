@@ -21,7 +21,7 @@ export class TaskEditPageComponent implements OnInit {
 
   ngOnInit() {
       this.todoForm = this.formBuilder.group({
-      description: '',
+      clientes_idClientes: '',
       completed: '',
       priority: ''
     });
@@ -30,7 +30,7 @@ export class TaskEditPageComponent implements OnInit {
 
   onSubmit() {
     this.todoService.create(
-      this.todoForm.get('description').value,
+      this.todoForm.get('clientes_idClientes').value,
       this.todoForm.get('priority').value,
       Boolean(this.todoForm.get('completed').value)
     ).subscribe(serverResponse=>{

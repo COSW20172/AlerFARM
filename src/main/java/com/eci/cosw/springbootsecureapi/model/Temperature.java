@@ -3,25 +3,25 @@ package com.eci.cosw.springbootsecureapi.model;
 import java.util.Date;
 
 public class Temperature {
-    private String id ;
+    private int idParametro ;
+    private int Clientes_idClientes;
     private Float valor;
     private Float fecha;
-    private String description;
 
-    public String getDescription() {
-        return description;
+    public int getIdParametro() {
+        return idParametro;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setIdParametro(int idParametro) {
+        this.idParametro = idParametro;
     }
 
-    public String getID() {
-        return id;
+    public int getClientes_idClientes() {
+        return Clientes_idClientes;
     }
 
-    public void setID(String ID) {
-        this.id = ID;
+    public void setClientes_idClientes(int clientes_idClientes) {
+        Clientes_idClientes = clientes_idClientes;
     }
 
     public Float getValor() {
@@ -39,18 +39,20 @@ public class Temperature {
     public void setFecha(Float fecha) {
         this.fecha = fecha;
     }
-    
 
-    public Temperature(){
-
+    public Temperature(int idParametro, int clientes_idClientes, float i, float i1){
+        this.idParametro=(idParametro);
+        this.valor=(i);
+        this.fecha=(i1);
+        this.Clientes_idClientes=(Clientes_idClientes);
     }
 
-    public Temperature(String id, Float valor, Float fecha,String description){
-        this.setID(id);
+    public Temperature(int idParametro,int Clientes_idClientes, Float valor, Float fecha){
+        this.setIdParametro(idParametro);
         this.setValor(valor);
         this.setFecha(fecha);
-        this.setDescription(description);
-        
+        this.setClientes_idClientes(Clientes_idClientes);
+
     }
 
 

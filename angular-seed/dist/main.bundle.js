@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -34,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">Alert-Farm</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/user\">Create User</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/temperatures\">Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/temperature\">Crear Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/humiditys\">humedad</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/humidity\">Crear humedad</a>\r\n      </li>\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n      <form class=\"form-inline my-2 my-lg-0\">\r\n      </form>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">Alert-Farm</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/user\">Create User</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/temperatures\">Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/humiditys\">humedad</a>\r\n      </li>\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n      <form class=\"form-inline my-2 my-lg-0\">\r\n      </form>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -250,14 +254,10 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_config_app_configuration_service__ = __webpack_require__("../../../../../src/app/common/config/app-configuration.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -307,7 +307,7 @@ var APIService = (function () {
         else {
             errObj = error.message ? { message: error.message } : { message: error };
         }
-        return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(errObj);
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["a" /* Observable */].throw(errObj);
     };
     APIService.prototype.get = function (url, options) {
         return this.http
@@ -530,11 +530,11 @@ var User = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Humidity; });
 var Humidity = (function () {
-    function Humidity(id, valor, fecha) {
-        this.id = id;
+    function Humidity(idParametro, Clientes_idClientes, valor, fecha) {
+        this.idParametro = idParametro;
         this.valor = valor;
         this.fecha = fecha;
-        this.description = "Humidity";
+        this.Clientes_idClientes = Clientes_idClientes;
     }
     return Humidity;
 }());
@@ -549,11 +549,11 @@ var Humidity = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Temperature; });
 var Temperature = (function () {
-    function Temperature(id, valor, fecha) {
-        this.id = id;
+    function Temperature(idParametro, Clientes_idClientes, valor, fecha) {
+        this.idParametro = idParametro;
         this.valor = valor;
         this.fecha = fecha;
-        this.description = "Temperature";
+        this.Clientes_idClientes = Clientes_idClientes;
     }
     return Temperature;
 }());
@@ -568,10 +568,10 @@ var Temperature = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Todo; });
 var Todo = (function () {
-    function Todo(description, priority, completed) {
+    function Todo(clientes_idClientes, priority, completed) {
         if (priority === void 0) { priority = 1; }
         if (completed === void 0) { completed = false; }
-        this.description = description;
+        this.clientes_idClientes = clientes_idClientes;
         this.completed = completed;
         this.priority = priority;
     }
@@ -664,7 +664,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/humidity-edit-page/humidity-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Agregar un dato de humedad</h2>\r\n  <form [formGroup]=\"humidityForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"id\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"id\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Agregar un dato de humedad</h2>\r\n  <form [formGroup]=\"humidityForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"idParametro\">Id</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"idParametro\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Cliente</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -698,14 +698,15 @@ var HumidityEditPageComponent = (function () {
     }
     HumidityEditPageComponent.prototype.ngOnInit = function () {
         this.humidityForm = this.formBuilder.group({
-            id: '',
+            idParametro: '',
+            clientes_idClientes: '',
             valor: '',
             fecha: ''
         });
     };
     HumidityEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.humidityService.create(this.humidityForm.get('id').value, this.humidityForm.get('valor').value, this.humidityForm.get('fecha').value).subscribe(function (serverResponse) {
+        this.humidityService.create(this.humidityForm.get('idParametro').value, this.humidityForm.get('clientes_idClientes').value, this.humidityForm.get('valor').value, this.humidityForm.get('fecha').value).subscribe(function (serverResponse) {
             _this.router.navigate(['/humiditys']);
         }, function (error) {
             console.log(error);
@@ -749,7 +750,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/humidity-list-page/humidity-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>humedad</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let humidity of humiditys\">\r\n  <td>{{humidity.id}}</td>\r\n  <td>{{humidity.valor}}</td>\r\n  <td>{{humidity.fecha}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>humedad</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let humidity of humiditys\">\r\n  <td>{{humidity.idParametro}}</td>\r\n  <td>{{humidity.valor}}</td>\r\n  <td>{{humidity.fecha}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -880,7 +881,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-in/sing-in-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Sign In</h2>\r\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Contraseña</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Iniciar sesión</button>\r\n\r\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\r\n\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <h2>Sign In</h2>\r\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"username\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Contraseña</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Iniciar sesión</button>\r\n\r\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\r\n\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -921,7 +922,7 @@ var SingInPageComponent = (function () {
     SingInPageComponent.prototype.doLogin = function () {
         var _this = this;
         this.usersService.login(this.signInForm.get('username').value, this.signInForm.get('password').value).subscribe(function (loginResponse) {
-            _this.router.navigate(['tasks']);
+            _this.router.navigate(['/temperatures']);
         }, function (error) {
             _this.loginError = 'Error Signing in: ' + (error && error.message ? error.message : '');
         });
@@ -963,7 +964,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-edit-page/task-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Editar Alerta</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Editar Alerta</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -997,14 +998,14 @@ var TaskEditPageComponent = (function () {
     }
     TaskEditPageComponent.prototype.ngOnInit = function () {
         this.todoForm = this.formBuilder.group({
-            description: '',
+            clientes_idClientes: '',
             completed: '',
             priority: ''
         });
     };
     TaskEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.todoService.create(this.todoForm.get('description').value, this.todoForm.get('priority').value, Boolean(this.todoForm.get('completed').value)).subscribe(function (serverResponse) {
+        this.todoService.create(this.todoForm.get('clientes_idClientes').value, this.todoForm.get('priority').value, Boolean(this.todoForm.get('completed').value)).subscribe(function (serverResponse) {
             _this.router.navigate(['/tasks']);
         }, function (error) {
             console.log(error);
@@ -1048,7 +1049,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-list-page/task-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Tasks</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let todo of todos\">\r\n   <td>{{todo.description}}</td>\r\n   <td>{{todo.priority}}</td>\r\n   <td>{{todo.completed}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>Tasks</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let todo of todos\">\r\n   <td>{{todo.clientes_idClientes}}</td>\r\n   <td>{{todo.priority}}</td>\r\n   <td>{{todo.completed}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1118,7 +1119,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/temperature-edit-page/temperature-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Editar temperatura</h2>\r\n  <form [formGroup]=\"temperaturaForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"id\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"id\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Editar temperatura</h2>\r\n  <form [formGroup]=\"temperaturaForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"idParametro\">Id</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"idParametro\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Cliente</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1152,14 +1153,15 @@ var TemperatureEditPageComponent = (function () {
     }
     TemperatureEditPageComponent.prototype.ngOnInit = function () {
         this.temperaturaForm = this.formBuilder.group({
-            id: '',
+            idParametro: '',
+            clientes_idClientes: '',
             valor: '',
             fecha: ''
         });
     };
     TemperatureEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.temperatureService.create(this.temperaturaForm.get('id').value, this.temperaturaForm.get('valor').value, this.temperaturaForm.get('fecha').value).subscribe(function (serverResponse) {
+        this.temperatureService.create(this.temperaturaForm.get('idParametro').value, this.temperaturaForm.get('clientes_idClientes').value, this.temperaturaForm.get('valor').value, this.temperaturaForm.get('fecha').value).subscribe(function (serverResponse) {
             _this.router.navigate(['/temperatures']);
         }, function (error) {
             console.log(error);
@@ -1203,7 +1205,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/temperature-list-page/temperature-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Temperatura</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>id</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let temperature of temperatures\">\r\n   <td>{{temperature.id}}</td>\r\n   <td>{{temperature.valor}}</td>\r\n   <td>{{temperature.fecha}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>Temperatura</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>id</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let temperature of temperatures\">\r\n   <td>{{temperature.idParametro}}</td>\r\n   <td>{{temperature.valor}}</td>\r\n   <td>{{temperature.fecha}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1443,8 +1445,8 @@ var HumidityService = (function (_super) {
         _this.resourceUrl = 'api/humidity';
         return _this;
     }
-    HumidityService.prototype.create = function (value, value2, value3) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_humidity__["a" /* Humidity */](value, value2, value3));
+    HumidityService.prototype.create = function (value, value2, value3, value4) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_humidity__["a" /* Humidity */](value, value2, value3, value4));
     };
     HumidityService.prototype.list = function () {
         return this.get(this.resourceUrl);
@@ -1493,8 +1495,8 @@ var TemperatureService = (function (_super) {
         _this.resourceUrl = 'api/temperature';
         return _this;
     }
-    TemperatureService.prototype.create = function (value, value2, value3) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_temperature__["a" /* Temperature */](value, value2, value3));
+    TemperatureService.prototype.create = function (value, value2, value3, value4) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_temperature__["a" /* Temperature */](value, value2, value3, value4));
     };
     TemperatureService.prototype.list = function () {
         return this.get(this.resourceUrl);
@@ -1569,8 +1571,7 @@ TodoService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_config_app_configuration_service__ = __webpack_require__("../../../../../src/app/common/config/app-configuration.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of__ = __webpack_require__("../../../../rxjs/add/observable/of.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/of.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_User__ = __webpack_require__("../../../../../src/app/models/User.ts");
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
