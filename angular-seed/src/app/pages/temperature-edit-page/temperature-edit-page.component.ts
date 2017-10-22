@@ -22,9 +22,10 @@ export class TemperatureEditPageComponent implements OnInit {
   ngOnInit() {
       this.temperaturaForm = this.formBuilder.group({
       idParametro: '',
-      clientes_idClientes: '',
+      Clientes_idClientes: '',
       valor: '',
-      fecha: ''
+      fecha: '',
+      Arduino_idArduino: ''
     });
 
   }
@@ -32,9 +33,10 @@ export class TemperatureEditPageComponent implements OnInit {
   onSubmit() {
     this.temperatureService.create(
       this.temperaturaForm.get('idParametro').value,
-      this.temperaturaForm.get('clientes_idClientes').value,
+      this.temperaturaForm.get('Clientes_idClientes').value,
       this.temperaturaForm.get('valor').value,
-      this.temperaturaForm.get('fecha').value
+      this.temperaturaForm.get('fecha').value,
+      this.temperaturaForm.get('Arduino_idArduino').value
     ).subscribe(serverResponse=>{
         this.router.navigate(['/temperatures']);
     }, error=>{

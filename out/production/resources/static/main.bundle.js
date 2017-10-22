@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">Alert-Farm</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/user\">Create User</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/temperatures\">Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/humiditys\">humedad</a>\r\n      </li>\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n      <form class=\"form-inline my-2 my-lg-0\">\r\n      </form>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">Alert-Farm</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/user\" routerLink=\"/user\">Create User</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/temperatures\">Temperatura</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/humiditys\">humedad</a>\r\n      </li>\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n      <form class=\"form-inline my-2 my-lg-0\">\r\n      </form>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -68,7 +68,7 @@ var AppComponent = (function () {
         this.router = router;
         this.title = 'app';
         if (!this.authService.isLoggedIn()) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/temperatures']);
         }
     }
     AppComponent.prototype.isLoggedIn = function () {
@@ -160,7 +160,7 @@ var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_20__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_13__pages_temperature_list_page_temperature_list_page_component__["a" /* TemperatureListPageComponent */],
         canActivate: [__WEBPACK_IMPORTED_MODULE_21__common_auth_service__["a" /* AuthService */]],
     },
     {
@@ -530,11 +530,12 @@ var User = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Humidity; });
 var Humidity = (function () {
-    function Humidity(idParametro, Clientes_idClientes, valor, fecha) {
+    function Humidity(idParametro, Clientes_idClientes, valor, fecha, Arduino_idArduino) {
         this.idParametro = idParametro;
+        this.Clientes_idClientes = Clientes_idClientes;
         this.valor = valor;
         this.fecha = fecha;
-        this.Clientes_idClientes = Clientes_idClientes;
+        this.Arduino_idArduino = Arduino_idArduino;
     }
     return Humidity;
 }());
@@ -549,11 +550,12 @@ var Humidity = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Temperature; });
 var Temperature = (function () {
-    function Temperature(idParametro, Clientes_idClientes, valor, fecha) {
+    function Temperature(idParametro, Clientes_idClientes, valor, fecha, Arduino_idArduino) {
         this.idParametro = idParametro;
+        this.Clientes_idClientes = Clientes_idClientes;
         this.valor = valor;
         this.fecha = fecha;
-        this.Clientes_idClientes = Clientes_idClientes;
+        this.Arduino_idArduino = 1;
     }
     return Temperature;
 }());
@@ -568,10 +570,10 @@ var Temperature = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Todo; });
 var Todo = (function () {
-    function Todo(clientes_idClientes, priority, completed) {
+    function Todo(description, priority, completed) {
         if (priority === void 0) { priority = 1; }
         if (completed === void 0) { completed = false; }
-        this.clientes_idClientes = clientes_idClientes;
+        this.description = description;
         this.completed = completed;
         this.priority = priority;
     }
@@ -664,7 +666,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/humidity-edit-page/humidity-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Agregar un dato de humedad</h2>\r\n  <form [formGroup]=\"humidityForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"idParametro\">Id</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"idParametro\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Cliente</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Agregar un dato de humedad</h2>\r\n  <form [formGroup]=\"humidityForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"idParametro\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"idParametro\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"Clientes_idClientes\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"cliente\" formControlName=\"Clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"valor\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"fecha\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"Arduino_idArduino\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"arduino\" formControlName=\"Arduino_idArduino\" required>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -699,14 +701,15 @@ var HumidityEditPageComponent = (function () {
     HumidityEditPageComponent.prototype.ngOnInit = function () {
         this.humidityForm = this.formBuilder.group({
             idParametro: '',
-            clientes_idClientes: '',
+            Clientes_idClientes: '',
             valor: '',
-            fecha: ''
+            fecha: '',
+            Arduino_idArduino: ''
         });
     };
     HumidityEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.humidityService.create(this.humidityForm.get('idParametro').value, this.humidityForm.get('clientes_idClientes').value, this.humidityForm.get('valor').value, this.humidityForm.get('fecha').value).subscribe(function (serverResponse) {
+        this.humidityService.create(this.humidityForm.get('idParametro').value, this.humidityForm.get('Clientes_idClientes').value, this.humidityForm.get('valor').value, this.humidityForm.get('fecha').value, this.humidityForm.get('Arduino_idArduino').value).subscribe(function (serverResponse) {
             _this.router.navigate(['/humiditys']);
         }, function (error) {
             console.log(error);
@@ -750,7 +753,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/humidity-list-page/humidity-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>humedad</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let humidity of humiditys\">\r\n  <td>{{humidity.idParametro}}</td>\r\n  <td>{{humidity.valor}}</td>\r\n  <td>{{humidity.fecha}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>humedad</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Id</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n     <th>Arduino</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let humidity of humiditys\">\r\n  <td>{{humidity.idParametro}}</td>\r\n  <td>{{humidity.valor}}</td>\r\n  <td>{{humidity.fecha}}</td>\r\n  <td>1</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -781,6 +784,7 @@ var HumidityListPageComponent = (function () {
         var _this = this;
         this.HumidityService.list().subscribe(function (humidityResponse) {
             _this.humiditys = humidityResponse;
+            console.log(_this.humiditys);
         });
     };
     return HumidityListPageComponent;
@@ -881,7 +885,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-in/sing-in-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Sign In</h2>\r\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"username\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Contraseña</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Iniciar sesión</button>\r\n\r\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\r\n\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <h2>Sign In</h2>\r\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Usuario</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Contraseña</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Iniciar sesión</button>\r\n\r\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\r\n\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -922,7 +926,7 @@ var SingInPageComponent = (function () {
     SingInPageComponent.prototype.doLogin = function () {
         var _this = this;
         this.usersService.login(this.signInForm.get('username').value, this.signInForm.get('password').value).subscribe(function (loginResponse) {
-            _this.router.navigate(['/temperatures']);
+            _this.router.navigate(['temperatures']);
         }, function (error) {
             _this.loginError = 'Error Signing in: ' + (error && error.message ? error.message : '');
         });
@@ -964,7 +968,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-edit-page/task-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Editar Alerta</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Editar Alerta</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -998,14 +1002,14 @@ var TaskEditPageComponent = (function () {
     }
     TaskEditPageComponent.prototype.ngOnInit = function () {
         this.todoForm = this.formBuilder.group({
-            clientes_idClientes: '',
+            description: '',
             completed: '',
             priority: ''
         });
     };
     TaskEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.todoService.create(this.todoForm.get('clientes_idClientes').value, this.todoForm.get('priority').value, Boolean(this.todoForm.get('completed').value)).subscribe(function (serverResponse) {
+        this.todoService.create(this.todoForm.get('description').value, this.todoForm.get('priority').value, Boolean(this.todoForm.get('completed').value)).subscribe(function (serverResponse) {
             _this.router.navigate(['/tasks']);
         }, function (error) {
             console.log(error);
@@ -1049,7 +1053,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-list-page/task-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Tasks</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let todo of todos\">\r\n   <td>{{todo.clientes_idClientes}}</td>\r\n   <td>{{todo.priority}}</td>\r\n   <td>{{todo.completed}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>Tasks</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>ID</th>\r\n     <th>Valor</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let todo of todos\">\r\n   <td>{{todo.description}}</td>\r\n   <td>{{todo.priority}}</td>\r\n   <td>{{todo.completed}}</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1119,7 +1123,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/temperature-edit-page/temperature-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Editar temperatura</h2>\r\n  <form [formGroup]=\"temperaturaForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"idParametro\">Id</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"idParametro\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"clientes_idClientes\">Cliente</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"clientes_idClientes\" formControlName=\"clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"aa\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Editar temperatura</h2>\r\n  <form [formGroup]=\"temperaturaForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"idParametro\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"idParametro\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"Clientes_idClientes\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"cliente\" formControlName=\"Clientes_idClientes\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"valor\">Valor</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"valor\" formControlName=\"valor\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"fecha\">fecha</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"fecha\" formControlName=\"fecha\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"Arduino_idArduino\">Id</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"arduino\" formControlName=\"Arduino_idArduino\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Guardar</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1154,14 +1158,15 @@ var TemperatureEditPageComponent = (function () {
     TemperatureEditPageComponent.prototype.ngOnInit = function () {
         this.temperaturaForm = this.formBuilder.group({
             idParametro: '',
-            clientes_idClientes: '',
+            Clientes_idClientes: '',
             valor: '',
-            fecha: ''
+            fecha: '',
+            Arduino_idArduino: ''
         });
     };
     TemperatureEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.temperatureService.create(this.temperaturaForm.get('idParametro').value, this.temperaturaForm.get('clientes_idClientes').value, this.temperaturaForm.get('valor').value, this.temperaturaForm.get('fecha').value).subscribe(function (serverResponse) {
+        this.temperatureService.create(this.temperaturaForm.get('idParametro').value, this.temperaturaForm.get('Clientes_idClientes').value, this.temperaturaForm.get('valor').value, this.temperaturaForm.get('fecha').value, this.temperaturaForm.get('Arduino_idArduino').value).subscribe(function (serverResponse) {
             _this.router.navigate(['/temperatures']);
         }, function (error) {
             console.log(error);
@@ -1205,7 +1210,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/temperature-list-page/temperature-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Temperatura</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>id</th>\r\n     <th>Valor</th>\r\n     <th>Fecha</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let temperature of temperatures\">\r\n   <td>{{temperature.idParametro}}</td>\r\n   <td>{{temperature.valor}}</td>\r\n   <td>{{temperature.fecha}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>Temperatura</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n       <th>Id</th>\r\n       <th>Valor</th>\r\n       <th>Fecha</th>\r\n       <th>Arduino</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let temperature of temperatures\">\r\n     <td>{{temperature.idParametro}}</td>\r\n     <td>{{temperature.valor}}</td>\r\n     <td>{{temperature.fecha}}</td>\r\n     <td>1</td>\r\n </tr>\r\n</table>"
 
 /***/ }),
 
@@ -1445,8 +1450,8 @@ var HumidityService = (function (_super) {
         _this.resourceUrl = 'api/humidity';
         return _this;
     }
-    HumidityService.prototype.create = function (value, value2, value3, value4) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_humidity__["a" /* Humidity */](value, value2, value3, value4));
+    HumidityService.prototype.create = function (value, value2, value3, value4, value5) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_humidity__["a" /* Humidity */](value, value2, value3, value4, value5));
     };
     HumidityService.prototype.list = function () {
         return this.get(this.resourceUrl);
@@ -1495,8 +1500,8 @@ var TemperatureService = (function (_super) {
         _this.resourceUrl = 'api/temperature';
         return _this;
     }
-    TemperatureService.prototype.create = function (value, value2, value3, value4) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_temperature__["a" /* Temperature */](value, value2, value3, value4));
+    TemperatureService.prototype.create = function (value, value2, value3, value4, value5) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_temperature__["a" /* Temperature */](value, value2, value3, value4, value5));
     };
     TemperatureService.prototype.list = function () {
         return this.get(this.resourceUrl);

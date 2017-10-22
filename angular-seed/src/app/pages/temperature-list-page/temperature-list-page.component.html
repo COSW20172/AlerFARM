@@ -2,14 +2,16 @@
 <table class="table table-bordered">
  <thead>
    <tr>
-     <th>id</th>
-     <th>Valor</th>
-     <th>Fecha</th>
+       <th>Id</th>
+       <th>Valor</th>
+       <th>Fecha</th>
+       <th>Arduino</th>
    </tr>
  </thead>
  <tr *ngFor="let temperature of temperatures">
-   <td>{{temperature.idParametro}}</td>
-   <td>{{temperature.valor}}</td>
-   <td>{{temperature.fecha}}</td>
+     <td>{{temperature.idParametro}}</td>
+     <td>{{temperature.valor}}</td>
+     <td>{{temperature.fecha}}</td>
+     <td>1</td>
  </tr>
 </table>

@@ -17,6 +17,7 @@ export class HumidityListPageComponent implements OnInit {
   ngOnInit() {
     this.HumidityService.list().subscribe(humidityResponse => {
       this.humiditys = humidityResponse;
+     console.log(this.humiditys)
     })
   }
 
