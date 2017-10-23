@@ -12,6 +12,14 @@ buildscript {
 	}
 }
 
+plugins {
+  id "com.heroku.sdk.heroku-gradle" version "0.2.0"
+}
+
+heroku {
+	appName = "alertfarm"
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -28,6 +36,7 @@ repositories {
 
 
 dependencies {
+	compile('com.heroku.sdk:heroku-deploy:1.1.1')
 	compile('io.jsonwebtoken:jjwt:0.6.0')
 	compile('org.springframework.boot:spring-boot-starter-web'){
 		exclude module: 'spring-boot-starter-tomcat'
