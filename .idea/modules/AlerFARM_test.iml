@@ -10,14 +10,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.hibernate.javax.persistence:hibernate-jpa-2.1-AlertFarm.api:1.0.0.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-continuation:9.4.7.v20170914" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-http:9.4.7.v20170914" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:5.0.0.BUILD-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.0.0.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.4.7.v20170914" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-io:9.4.7.v20170914" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: javax.transaction:javax.transaction-api:1.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.0.0.BUILD-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.0.0.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:2.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aspects:5.0.1.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate.validator:hibernate-validator:6.0.3.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.0.1.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.0.1.BUILD-SNAPSHOT" level="project" />
@@ -40,8 +38,8 @@
     <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.196" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.7.v20170914" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:2.0.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-aspects:5.0.1.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.0.0.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:5.0.0.BUILD-SNAPSHOT" level="project" />
@@ -72,8 +70,8 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.36" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-security:2.0.0.BUILD-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.4.7.v20170914" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-io:9.4.7.v20170914" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:5.0.0.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-xml:9.4.7.v20170914" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-servlet:9.4.7.v20170914" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-common:9.4.7.v20170914" level="project" />
@@ -114,18 +112,10 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jetty:2.0.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.1.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:5.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-continuation:9.4.7.v20170914" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-http:9.4.7.v20170914" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.4.7.v20170914" level="project" />
-    <orderEntry type="library" name="Gradle: com.heroku.sdk:heroku-deploy:1.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.commons:commons-compress:1.10" level="project" />
-    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.4" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jgit:org.eclipse.jgit:3.6.2.201501210735-r" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.3" level="project" />
-    <orderEntry type="library" name="Gradle: com.jcraft:jsch:0.1.50" level="project" />
-    <orderEntry type="library" name="Gradle: com.googlecode.javaewah:JavaEWAH:0.7.9" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.0.1.BUILD-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.11" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.8" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="AlerFARM_main" />
 </module>
