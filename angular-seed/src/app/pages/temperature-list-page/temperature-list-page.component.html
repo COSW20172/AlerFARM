@@ -1,4 +1,33 @@
-<h2>Temperatura</h2>
+<div class="container2">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center text-dark">Historial de Temperaturas</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Valor</th>
+                            <th>Fecha</th>
+                            <th>Arduino</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let temperature of temperatures">
+                            <td>{{temperature.idParametro}}</td>
+                            <td>{{temperature.valor}}</td>
+                            <td>{{temperature.fecha}}</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    <h2>Temperatura</h2>
 <table class="table table-bordered">
  <thead>
    <tr>
@@ -15,3 +44,4 @@
      <td>1</td>
  </tr>
 </table>
+-->

@@ -28,10 +28,12 @@ import { UsersService } from './services/users.service';
 import { TemperatureService } from './services/temperature.service';
 import { HumidityService } from './services/humidity.service';
 const ROUTES = [
-  { path: '', component: SingInPageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'sign', component: SingInPageComponent },
   { path: 'home', component: HomePageComponent },
+  { path: 'user', component: UserEditPageComponent},
   {
-    path: 'tasks', component: TemperatureListPageComponent,
+    path: 'tasks', component: TaskListPageComponent,
     canActivate: [AuthService],
   },
   {
@@ -43,10 +45,6 @@ const ROUTES = [
     canActivate: [AuthService],
   },
   {
-    path: 'user', component: UserEditPageComponent,
-    canActivate: [AuthService],
-  },
-    {
     path: 'temperatures', component: TemperatureListPageComponent,
     canActivate: [AuthService],
   },
@@ -87,7 +85,8 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule
   ],
   providers: [
     {
