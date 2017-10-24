@@ -8,8 +8,6 @@ import { INITIAL_CONFIG } from './common/config/initial-config';
 import { AppComponent } from './app.component';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { TaskListPageComponent } from './pages/task-list-page/task-list-page.component';
-import { TaskEditPageComponent } from './pages/task-edit-page/task-edit-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserListPageComponent } from './pages/user-list-page/user-list-page.component';
 import { UserEditPageComponent } from './pages/user-edit-page/user-edit-page.component';
@@ -19,7 +17,6 @@ import { HumidityListPageComponent } from './pages/humidity-list-page/humidity-l
 import { HumidityEditPageComponent } from './pages/humidity-edit-page/humidity-edit-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { TodoService } from './services/todo.service';
 import { HttpModule } from '@angular/http';
 import { SingInPageComponent } from './pages/sign-in/sing-in-page.component';
 import { AuthService } from './common/auth.service';
@@ -28,25 +25,15 @@ import { UsersService } from './services/users.service';
 import { TemperatureService } from './services/temperature.service';
 import { HumidityService } from './services/humidity.service';
 const ROUTES = [
-  { path: '', component: SingInPageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'sign', component: SingInPageComponent },
   { path: 'home', component: HomePageComponent },
-  {
-    path: 'tasks', component: TemperatureListPageComponent,
-    canActivate: [AuthService],
-  },
-  {
-    path: 'edit', component: TaskEditPageComponent,
-    canActivate: [AuthService],
-  },
+  { path: 'user', component: UserEditPageComponent},
   {
     path: 'users', component: UserListPageComponent,
     canActivate: [AuthService],
   },
   {
-    path: 'user', component: UserEditPageComponent,
-    canActivate: [AuthService],
-  },
-    {
     path: 'temperatures', component: TemperatureListPageComponent,
     canActivate: [AuthService],
   },
@@ -70,8 +57,6 @@ const ROUTES = [
   declarations: [
     AppComponent,
     HomePageComponent,
-    TaskListPageComponent,
-    TaskEditPageComponent,
     PageNotFoundComponent,
     SingInPageComponent,
     UserListPageComponent,
@@ -87,7 +72,8 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule
   ],
   providers: [
     {
@@ -96,7 +82,6 @@ const ROUTES = [
         apiURL: 'https://alertfarm.herokuapp.com'
       }
     },
-    TodoService,
     AuthService,
     AppDataService,
     UsersService,

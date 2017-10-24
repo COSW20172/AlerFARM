@@ -1,32 +1,37 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-    aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  <a class="navbar-brand" href="#">Alert-Farm</a>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/users" routerLink="/users">Users</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/user" routerLink="/user">Create User</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/users" routerLink="/temperatures">Temperatura</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/users" routerLink="/humiditys">humedad</a>
-      </li>
-      <li *ngIf="isLoggedIn()" class="nav-item">
-        <a href="#" class="nav-link" (click)="signOut()">(Sign Out)</a>
-      </li>
-      <form class="form-inline my-2 my-lg-0">
-      </form>
-    </ul>
-  </div>
+<nav class="navbar navbar-default navbar-fixed-top navbar-toggleable-md">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i class="glyphicon glyphicon-phone"></i>AlertFarm</a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/']">Inicio </a>
+                </li>
+                <li role="presentation">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/']">Acerca de</a>
+                </li>
+                <li role="presentation">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['sign']">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['user']">Registrarse </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
-
+     
 <div class="container">
-  <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
 </div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5>AlertFarm © 2017</h5></div>
+            <div class="col-sm-6 social-icons"><a href="https://github.com/COSW20172/AlerFARM"><i class="fa fa-github"></i></a></div>
+        </div>
+    </div>
+</footer>
