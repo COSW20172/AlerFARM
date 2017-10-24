@@ -222,7 +222,7 @@ AppModule = __decorate([
             {
                 provide: __WEBPACK_IMPORTED_MODULE_5__common_config_initial_config__["a" /* INITIAL_CONFIG */],
                 useValue: {
-                    apiURL: 'http://alertfarm.herokuapp.com'
+                    apiURL: 'http://alertfarm.herokuapp.com/'
                 }
             },
             __WEBPACK_IMPORTED_MODULE_18__services_todo_service__["a" /* TodoService */],

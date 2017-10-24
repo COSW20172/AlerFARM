@@ -93,7 +93,7 @@ const ROUTES = [
     {
       provide: INITIAL_CONFIG,
       useValue: {
-        apiURL: 'http://alertfarm.herokuapp.com'
+        apiURL: 'http://alertfarm.herokuapp.com/'
       }
     },
     TodoService,
