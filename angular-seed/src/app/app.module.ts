@@ -31,7 +31,7 @@ const ROUTES = [
   { path: '', component: SingInPageComponent },
   { path: 'home', component: HomePageComponent },
   {
-    path: 'tasks', component: TaskListPageComponent,
+    path: 'tasks', component: TemperatureListPageComponent,
     canActivate: [AuthService],
   },
   {

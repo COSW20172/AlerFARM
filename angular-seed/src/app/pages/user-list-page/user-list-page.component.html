@@ -2,14 +2,14 @@
 <table class="table table-bordered">
  <thead>
    <tr>
-     <th>Name</th>
-     <th>Lastname</th>
-     <th>Image</th>
+     <th>Nombre</th>
+     <th>Celular</th>
+     <th>Correo</th>
    </tr>
  </thead>
  <tr *ngFor="let user of usuarios">
    <td>{{user.name}}</td>
-   <td>{{user.lastname}}</td>
-   <td><img [src]="user.image" width="150" height="150" /></td>
+   <td>{{user.celular}}</td>
+   <td>{{user.email}}</td>
  </tr>
 </table>

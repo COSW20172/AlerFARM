@@ -21,18 +21,22 @@ export class HumidityEditPageComponent implements OnInit {
 
   ngOnInit() {
       this.humidityForm = this.formBuilder.group({
-      id: '',
+      idParametro: '',
+      Clientes_idClientes: '',
       valor: '',
-      fecha: ''
+      fecha: '',
+      Arduino_idArduino: ''
     });
 
   }
 
   onSubmit() {
     this.humidityService.create(
-      this.humidityForm.get('id').value,
+      this.humidityForm.get('idParametro').value,
+      this.humidityForm.get('Clientes_idClientes').value,
       this.humidityForm.get('valor').value,
-      this.humidityForm.get('fecha').value
+      this.humidityForm.get('fecha').value,
+      this.humidityForm.get('Arduino_idArduino').value
     ).subscribe(serverResponse=>{
         this.router.navigate(['/humiditys']);
     }, error=>{

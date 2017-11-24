@@ -15,7 +15,7 @@ export class TemperatureListPageComponent implements OnInit {
 
 
   ngOnInit() {
-    this.temperatureService.list().subscribe(temperatureResponse => {
+    this.temperatureService.listPorId().subscribe(temperatureResponse => {
       this.temperatures = temperatureResponse;
     })
   }

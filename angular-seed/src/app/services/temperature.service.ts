@@ -7,13 +7,18 @@ import { Observable } from "rxjs/Observable";
 export class TemperatureService extends APIService{
   private resourceUrl = 'api/temperature';
 
-  
-      create(value:string,value2:Number,value3:string):Observable<Temperature>{
-        return this.post(this.resourceUrl,new Temperature(value,value2,value3));
+
+      create(value:Number,value2:Number,value3:Number,value4:Number,value5:Number):Observable<Temperature>{
+        return this.post(this.resourceUrl,new Temperature(value,value2,value3,value4,value5));
 
       }
       
       list(): Observable<Temperature[]> {
+        return this.get(this.resourceUrl);
+      }
+
+      listPorId(): Observable<Temperature[]> {
+        this.resourceUrl = 'api/temperatures/'+(sessionStorage.getItem("email"));
         return this.get(this.resourceUrl);
       }
 

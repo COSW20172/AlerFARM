@@ -2,14 +2,16 @@
 <table class="table table-bordered">
  <thead>
    <tr>
-     <th>ID</th>
+     <th>Id</th>
      <th>Valor</th>
-     <th>Completed</th>
+     <th>Fecha</th>
+     <th>Arduino</th>
    </tr>
  </thead>
  <tr *ngFor="let humidity of humiditys">
-  <td>{{humidity.id}}</td>
+  <td>{{humidity.idParametro}}</td>
   <td>{{humidity.valor}}</td>
   <td>{{humidity.fecha}}</td>
+  <td>1</td>
  </tr>
 </table>

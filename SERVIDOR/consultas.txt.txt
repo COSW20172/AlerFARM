@@ -1,0 +1,20 @@
+//Consulta cliente
+SELECT * 
+FROM `Clientes` 
+WHERE `idClientes` = ?;
+
+//Consulta solo humedad
+SELECT c.idClientes, h.idParametro, h.valor, h.fecha
+FROM `Clientes` AS c,`Humedad` AS h 
+WHERE 
+h.Clientes_idClientes = c.idClientes AND 
+((SELECT MAX(idParametro) FROM `Humedad`) - 50) <= h.idParametro AND
+c.idClientes = ?;
+
+//Consulta solo temperatura
+SELECT c.idClientes, t.idParametro, t.valor, t.fecha 
+FROM `Clientes` AS c,`Temperatura` AS t
+WHERE 
+t.Clientes_idClientes = c.idClientes AND 
+((SELECT MAX(idParametro) FROM `Temperatura`) - 50) <= t.idParametro AND
+c.idClientes = ?;

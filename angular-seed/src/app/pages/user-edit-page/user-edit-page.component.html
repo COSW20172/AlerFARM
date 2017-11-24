@@ -1,20 +1,6 @@
 <div class="container">
   <h2>Añadir nuevo usuario</h2>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
-    <div class="form-group">
-      <label for="name">Usuario</label>
-      <input type="text" class="form-control" id="name" formControlName="name" required>
-    </div>
-
-    <div class="form-group">
-      <label for="lastname">Nombre</label>
-      <input type="text" class="form-control" id="lastname" formControlName="lastname">
-    </div>
-
-    <div class="form-group">
-      <label for="image">Url Image</label>
-      <input type="text" class="form-control" id="image" formControlName="image">
-    </div>
 
     <div class="form-group">
       <label for="email">Email</label>
@@ -25,6 +11,25 @@
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" formControlName="password">
     </div>
+
+    <div class="form-group">
+      <label for="name">nombre</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="idUser">Cedula</label>
+      <input type="number" class="form-control" id="idUser" formControlName="idUser">
+    </div>
+
+    <div class="form-group">
+      <label for="celular">Celular</label>
+      <input type="text" class="form-control" id="celular" formControlName="celular">
+    </div>
+
+
+
+
 
     <button type="submit" class="btn btn-success">Añadir</button>
 
